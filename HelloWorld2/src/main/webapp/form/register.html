@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입(form/register.html)</title>
+    <style>
+     input[type='number'] {
+        display: inline-block;
+        width: 50px;
+     }
+     fieldset {
+        width: 60%;
+        margin: auto;
+     }
+
+     div {
+        width: 40%;
+        margin: 10px auto;
+     }
+
+     td {
+        border: 1px dotted grey;
+     }
+    </style>
+</head>
+
+<body>
+    <form action="">
+    <fieldset>
+    <legend>회원정보입력</legend>
+    <hr>
+       <table border="1" style="border-collapse: collapse;">
+            <tr>
+                <th>이름</th>
+                <td>
+                    <input type="text">
+                </td>
+            </tr>
+            <tr>
+                <th>아이디</th>
+                <td>
+                <input type="text" name = "" id = "" required> 
+                <button type="button" >중복확인</button>
+            </td>
+            </tr>
+            <tr>
+                <th>비밀번호</th>
+                <td style="font-size: 12px;">
+                    <input type="password" name = "" id = ""> * 비밀번호는 4~16자로 입력해 주세요.
+                </td>
+            </tr>
+            <tr>
+               <th>비밀번호 확인</th>
+                <td>
+                <input type="password" name = "" id = "">
+            </td>
+            </tr>
+            <tr>
+              <th>생일/성별</th>
+                <td>
+                <input type="number" name = "" id = ""> 년
+                <input type="number" name = "" id = ""> 월
+                <input type="number" name = "" id = ""> 일
+                <input type="radio" name="gender" id = "man" checked><label for="men">남</label>
+                <input type="radio" name="gender" id = "women"><label for="women">여</label>
+             </td>
+            </tr>
+                <tr>
+                   <th>이메일</th>
+                    <td>
+                        <input style="width: 100px;" type="text" name = "" id = ""> @
+                        <select name = "email">
+                        <option value="">선택</option>
+                        <option value="daum">daum.net</option>
+                        <option value="naver">naver.com</option>
+                        <option value="google">google.com</option>
+                </select>     
+                    <button>중복확인</button>
+                </td>
+                </tr>
+            <tr>
+                <th>휴대폰</th>
+                <td>
+                    <input type="number" name = "" id = ""> -
+                    <input type="number" name = "" id = ""> - 
+                    <input type="number" name = "" id = "">
+                </td>
+            </tr>
+            <tr>
+                <th>추천인</th>
+                <td>
+                <input type="text" name = "" id = "">
+                <button>추천인 검색</button>
+                </td>
+            </tr> 
+            <tr>
+                <th>뉴스메일</th>
+                <td>
+                <label><input type="radio" name="news" id = "" checked>받습니다.</label>
+                <label> <input type="radio" name="news" id = "" >받지 않습니다.</label>
+            </td>
+            </tr>
+            <tr>
+                <th>SMS안내</th>
+                <td>
+                    <label><input type="radio" name="sms" id = "" checked>받습니다.</label>
+                    <label> <input type="radio" name="sms" id = "" >받지 않습니다.</label>
+                </td>
+            </tr>
+            <tr>
+                <th>웹Push알림</th>
+                <td>
+                    <label><input type="radio" name="web" id = "" checked>받습니다.</label>
+                    <label> <input type="radio" name="web" id = "" >받지 않습니다.</label>
+                </td>
+            </tr>
+    </table>
+
+<div>
+<input type="image" width="100px" src="../img/back.PNG" alt = "취소하기">
+<input type="image" width="100px" src="../img/sing.PNG" alt = "등록하기">
+</div>
+</form>
+</fieldset><br>
+
+</body>
+
+</html>

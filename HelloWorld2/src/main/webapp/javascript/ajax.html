@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ajax.html</title>
+</head>
+<body>
+    <div id="show">
+    	<table border = "1">
+      <thead>
+        <tr>
+            <td>아이디</td>
+            <td>이름</td>
+            <td>비밀번호</td>
+        </tr>
+    </thead>
+    <tbody id="list"></tbody>
+    </table>
+    </div>
+    <script>
+        // 서버 상에 있는 html, jsp, 서블릿, text
+        let xhtp = new XMLHttpRequest();
+        xhtp.open('get', '../MemberList');
+        xhtp.send(); // 서버요청
+        xhtp.onload = function() {
+        	let data = JSON.parse(xhtp.response);
+            console.log(data);
+            let list = document.getElementById('list');
+            // 서버의 json 파일 -> JSON.parse() -> 페이지 출력
+            data.forEach(data => {    
+               
+                let tr = document.createElement('tr');    
+                
+                let td = document.createElement('td');    
+                let txt = document.createTextNode(data.memberId);
+                td.appendChild(txt); // id 가지고 오는 부분   
+        
+                let td2 = document.createElement('td');    
+                let txt2 = document.createTextNode(data.memberName);
+                td2.appendChild(txt2); // first_name
+            
+                let td3 = document.createElement('td');    
+                let txt3 = document.createTextNode(data.memberPw);
+                td3.appendChild(txt3); // email
+                
+                let td4 = document.createElement('td');    
+                let btn = document.createElement('button');       
+                // 삭제이벤트 : ajax 호출
+                btn.addEventListener('click', function() {
+                	let delAjax = new XMLHttpRequest();
+                	delAjax.open('post', '../MemberList');
+                	delAjax.set
+                })
+                let txt4 = document.createTextNode("삭제");
+				btn.append(txt4);
+				txt4.append(btn);
+                               
+                tr.append(td,td2, td3);
+               
+                list.append(tr);
+            })
+        };
+    </script>
+</body>
+</html>

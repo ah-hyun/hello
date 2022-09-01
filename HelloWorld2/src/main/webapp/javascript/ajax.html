@@ -51,13 +51,23 @@
                 btn.addEventListener('click', function() {
                 	let delAjax = new XMLHttpRequest();
                 	delAjax.open('post', '../MemberList');
-                	delAjax.set
-                })
+                	delAjax.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+                	delAjax.send('del-id='+this.parentElement.firstElementChild.textContent);
+                	delAjax.onload = function(e) {
+                		let result = delAjax.responseText;
+                		console.log(result);
+                		if(result == 'success') {
+                			btn.parentElement.parentElement.remove();
+                		}else {
+                			alert('처리중 에러발생.');
+                		}
+                	}
+                });
                 let txt4 = document.createTextNode("삭제");
 				btn.append(txt4);
-				txt4.append(btn);
+				td4.append(btn);
                                
-                tr.append(td,td2, td3);
+                tr.append(td,td2, td3, td4);
                
                 list.append(tr);
             })
